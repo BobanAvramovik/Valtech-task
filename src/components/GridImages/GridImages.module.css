@@ -1,0 +1,17 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(328px, 1fr));
+  gap: 20px;
+}
+
+.gridList {
+  width: 100%;
+}
+
+.image {
+  max-width: 100%;
+  min-width: 328px;
+  height: 250px;
+  object-fit: cover;
+  object-position: "center center";
+}
