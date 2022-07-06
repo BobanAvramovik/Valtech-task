@@ -4,7 +4,8 @@ import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 
-window.onbeforeunload = () => {
+window.onbeforeunload = (event) => {
+  event.returnValue = "You are going to be logged out. Continue ?"; // will not change the message
   localStorage.removeItem("token");
 };
 
