@@ -1,0 +1,16 @@
+.centered {
+  text-align: center;
+  font-size: 30px;
+  color: #333;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}

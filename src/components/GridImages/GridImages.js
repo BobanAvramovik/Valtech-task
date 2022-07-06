@@ -5,17 +5,13 @@ const GridImages = ({ images }) => {
   let navigate = useNavigate();
 
   const handleOpenImage = (id) => {
-    navigate(`/${id}`, { replace: false });
+    navigate(`/${id}`);
   };
 
   return (
     <ul className={classes.grid}>
       {images.map((image) => (
-        <li
-          className={classes.gridList}
-          key={image.id}
-          onClick={() => handleOpenImage(image.id)}
-        >
+        <li key={image.id} onClick={() => handleOpenImage(image.id)}>
           <img
             src={image.download_url}
             alt={image.author}

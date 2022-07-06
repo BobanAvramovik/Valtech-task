@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { getSingleImage } from "./api/getSingleImage";
-import Button from "../components/Layout/Button";
+import { getSingleImage } from "../api/getSingleImage";
+import Button from "../../components/Button/Button";
+import classes from "./ImageDetail.module.css";
+import Spinner from "../../components/Spinner/Spinner";
 
 const ImageDetail = () => {
   let navigate = useNavigate();
@@ -23,24 +25,28 @@ const ImageDetail = () => {
   }, [id]);
 
   const handleBackButton = () => {
-    navigate("/", { replace: true });
+    navigate("/");
   };
 
   return (
     <>
       {loading ? (
-        <p>loading...</p>
+        <div className={classes.centered}>
+          <Spinner />
+        </div>
       ) : loading === false && image ? (
-        <main>
-          <img src={image.download_url} alt={image.author} />
+        <main className={classes.detail}>
+          <img src={image.download_url} alt={image.author} width="800" />
           <p>Uploaded by:</p>
           <h3>{image.author}</h3>
         </main>
       ) : (
-        <p>No data.</p>
+        <p className={classes.centered}>No data.</p>
       )}
 
-      <Button onClick={handleBackButton}>Go back</Button>
+      <div className={`${classes.centered} ${classes["mt-20"]}`}>
+        <Button onClick={handleBackButton}>Go back</Button>
+      </div>
     </>
   );
 };

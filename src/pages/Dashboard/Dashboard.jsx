@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import GridImages from "../components/GridImages/GridImages";
-import { getImages } from "./api/getImages";
+import GridImages from "../../components/GridImages/GridImages";
+import { getImages } from "../api/getImages";
 
 const Dashboard = () => {
   const [images, setImages] = useState([]);

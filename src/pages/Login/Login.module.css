@@ -30,3 +30,8 @@
 .form > *:not(:last-child) {
   margin-bottom: 20px;
 }
+
+.description {
+  font-size: 1.5rem;
+  color: red;
+}
